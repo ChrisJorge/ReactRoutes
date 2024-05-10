@@ -16,7 +16,18 @@ function App() {
 
   if(!darkMode)
     {
-      console.log('Light')
+      console.log('dark');
+      moon.style.display = 'block';
+      sun.style.display = 'none';
+      body.setAttribute("style", "background-color:white");
+      title.style.color = 'black';
+      for(let i = 0; i < document.querySelectorAll('.homePageOption').length; i++)
+        {
+          let text = document.querySelectorAll('.homePageOptionText')[i]
+          let options = document.querySelectorAll('.homePageOption')[i]
+          text.style.color = 'black';
+          options.style.borderColor = 'black';
+        }
     }
   else{
     console.log('dark');
