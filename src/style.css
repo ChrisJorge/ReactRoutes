@@ -1,0 +1,137 @@
+/* Home page css */
+.topContainer{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+
+.homePageTitle{
+    text-align: center;
+    -webkit-transition: .4s;
+    transition: .4s;
+    
+}
+
+
+.homePageOptionsRow{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 15%;
+    margin-right: 15%;
+    height: 25vh;
+}
+
+.homePageOption{
+    border: solid black 5px;
+    width: 48%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 9%;
+}
+
+.homePageOption:hover{
+    background-color: gray;
+}
+
+.homePageOptionText{
+    color: black;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+/*Toggle Dark and Light mode css */
+
+.option{
+    display: flex;
+    align-items: center;
+}
+
+svg{
+    margin-right: 8px;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.Moon{
+    color: black;
+    display: block;
+}
+.Sun{
+    display: none;
+    color: white;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+body{
+    margin: 0%;
+    padding: 0%;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+.nav{
+    border: 1.5px solid black;
+    display: flex;
+    height: 80px;
+    justify-content: space-around;
+    align-items: center;
+}
+
