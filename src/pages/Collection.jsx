@@ -1,9 +1,9 @@
 import React from 'react'
 import Nav from '../components/Nav'
-function Collection() {
+function Collection({setDarkMode, darkMode}) {
   return (
     <div>
-        <Nav/>
+        <Nav setDarkMode = {setDarkMode} darkMode = {darkMode}/>
         Collection
     </div>
   )

@@ -16,38 +16,48 @@ function App() {
 
   if(!darkMode)
     {
-      console.log('dark');
-      moon.style.display = 'block';
-      sun.style.display = 'none';
+      moon.setAttribute('style', 'display: block')
+      sun.setAttribute('style', 'display: none')
       body.setAttribute("style", "background-color:white");
-      title.style.color = 'black';
-      for(let i = 0; i < document.querySelectorAll('.homePageOption').length; i++)
+      for(let i = 0; i < document.querySelectorAll('.change').length; i++)
         {
-          let text = document.querySelectorAll('.homePageOptionText')[i]
-          let options = document.querySelectorAll('.homePageOption')[i]
-          text.style.color = 'black';
-          options.style.borderColor = 'black';
+          let text = document.querySelectorAll('.change')[i]
+          text.setAttribute("style", "color: black")
         }
+      for(let i = 0; i < document.querySelectorAll('.changeBorder').length; i++)
+        {
+          let options = document.querySelectorAll('.changeBorder')[i];
+          options.setAttribute('style', "border-color: black")
+        }
+      // title.style.color = 'black';
+      // for(let i = 0; i < document.querySelectorAll('.homePageOption').length; i++)
+      //   {
+      //     let text = document.querySelectorAll('.homePageOptionText')[i]
+      //     let options = document.querySelectorAll('.homePageOption')[i]
+      //     text.style.color = 'black';
+      //     options.style.borderColor = 'black';
+      //   }
     }
   else{
-    console.log('dark');
-    moon.style.display = 'none';
-    sun.style.display = 'block';
+    moon.setAttribute('style', 'display: none')
+    sun.setAttribute('style', 'display: block')
     body.setAttribute("style", "background-color:black");
-    title.style.color = 'white';
-    for(let i = 0; i < document.querySelectorAll('.homePageOption').length; i++)
+    for(let i = 0; i < document.querySelectorAll('.change').length; i++)
       {
-        let text = document.querySelectorAll('.homePageOptionText')[i]
-        let options = document.querySelectorAll('.homePageOption')[i]
-        text.style.color = 'white';
-        options.style.borderColor = 'white';
+        let text = document.querySelectorAll('.change')[i]
+        text.setAttribute("style", "color: white")
+      }
+    for(let i = 0; i < document.querySelectorAll('.changeBorder').length; i++)
+      {
+        let options = document.querySelectorAll('.changeBorder')[i];
+        options.setAttribute('style', "border-color: white")
       }
   }
   return (
     <div className="App">
       <Routes>
         <Route path="/" element={<Homepage setDarkMode = {setDarkMode} darkMode = {darkMode}/>}/>
-        <Route path="/collection" element={<Collection/>}/>
+        <Route path="/collection" element={<Collection setDarkMode = {setDarkMode} darkMode = {darkMode}/>}/>
       </Routes>
     </div>
   )

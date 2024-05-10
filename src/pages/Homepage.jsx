@@ -13,7 +13,7 @@ function Homepage({setDarkMode, darkMode}) {
 
             </div>
             <div className="titleContainer">
-                <h1 className="homePageTitle">Welcome, please select an option</h1>
+                <h1 className="homePageTitle change">Welcome, please select an option</h1>
             </div>
             <div className='option'>
                 <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" className="Sun" viewBox="0 0 16 16">
@@ -30,13 +30,13 @@ function Homepage({setDarkMode, darkMode}) {
         </div>
         <div className="homePageOptionsContainer">
             <div className="homePageOptionsRow">
-                <Link to = "/collection" className='homePageOption'>
+                <Link to = "/collection" className='homePageOption changeBorder'>
                 
-                    <p className="homePageOptionText">Browse Collection</p>
+                    <p className="homePageOptionText change">Browse Collection</p>
                 </Link>
-                <Link to = "/collection" className='homePageOption'>
+                <Link to = "/collection" className='homePageOption changeBorder'>
                 
-                    <p className="homePageOptionText">Browse By Make</p>
+                    <p className="homePageOptionText change">Browse By Make</p>
                 </Link>
             </div>
 
