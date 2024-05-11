@@ -1,10 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-function Homepage({setDarkMode, darkMode}) {
+import { useEffect } from 'react';
+function Homepage({setDarkMode, darkMode,  update}) {
     const colorSwitch = () => {
         setDarkMode(!darkMode)
     }
 
+    useEffect(() => {
+       update()
+    }, [])
+    
 
   return (
     <div className='homePage'>

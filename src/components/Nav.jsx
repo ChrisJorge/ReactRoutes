@@ -1,11 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 
-function Nav({setDarkMode, darkMode}) {
+function Nav({setDarkMode, darkMode, update}) {
 
     const colorSwitch = () => {
         setDarkMode(!darkMode)
     }
+
+    useEffect(() => {
+        update()
+    })
+
 
 
   return (
