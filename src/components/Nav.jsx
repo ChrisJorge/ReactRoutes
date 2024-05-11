@@ -9,7 +9,7 @@ function Nav({setDarkMode, darkMode, update}) {
     }
 
     useEffect(() => {
-        update()
+        update(0)
     })
 
 

@@ -9,10 +9,8 @@
 .homePageTitle{
     text-align: center;
     -webkit-transition: .4s;
-    transition: .4s;
-    
+    transition: .4s;    
 }
-
 
 .homePageOptionsRow{
     display: flex;
@@ -22,7 +20,7 @@
     height: 25vh;
 }
 
-.homePageOption{
+.homePageOption, .card{
     border: solid black 5px;
     width: 48%;
     height: 100%;
@@ -32,11 +30,11 @@
     border-radius: 9%;
 }
 
-.homePageOption:hover{
+.homePageOption:hover, .card:hover{
     background-color: gray;
 }
 
-.homePageOptionText{
+.homePageOptionText, .pokemonName{
     color: black;
     -webkit-transition: .4s;
     transition: .4s;
@@ -127,6 +125,7 @@ body{
     -webkit-transition: .4s;
     transition: .4s;
 }
+/* Nav CSS */
 .nav{
     border: 1.5px solid black;
     display: flex;
@@ -135,3 +134,14 @@ body{
     align-items: center;
 }
 
+/* Collection CSS */
+.collectionContainer{
+  margin-top: 25px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.pokemonName{
+  font-size: 35px;
+}
