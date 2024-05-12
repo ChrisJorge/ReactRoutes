@@ -134,6 +134,10 @@ body{
     align-items: center;
 }
 
+.navText{
+  font-size: 30px;
+}
+
 /* Collection CSS */
 .collectionContainer{
   margin-top: 25px;

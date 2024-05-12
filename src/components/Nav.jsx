@@ -18,12 +18,12 @@ function Nav({setDarkMode, darkMode, update}) {
     <div className="nav changeBorder">
         <Link to='/'>
             <div className="navTab">
-                <p className='change'>Home</p>
+                <p className='change navText'>Home</p>
             </div>
         </Link>
         <Link to="/collection">
             <div className="navTab">
-                <p className='change'>Browse Collection</p>
+                <p className='change navText'>Browse Collection</p>
             </div>
         </Link>
 

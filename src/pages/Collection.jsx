@@ -5,13 +5,13 @@ import { useEffect, useState } from 'react'
 
 function Collection({setDarkMode, darkMode, update,}) {
   const [pokemon, setPokemon] = useState("null");
-  
-  const getData = async() => {
+ const [num, setNum] = useState(10)
+
+  const getData = async(num) => {
     try
     {
-      const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=10')
+      const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=${num}`)
       const data = await response.json()
-      console.log(data.results);
       setPokemon(data)
     } catch(error)
     {
@@ -19,24 +19,53 @@ function Collection({setDarkMode, darkMode, update,}) {
     }
 }
 
+  const changeNum = () => {
+    let number = document.querySelector('.numPokemon').value
+    try
+    {
+      number = parseInt(number)
+      if(number > 0 && number <= 10000)
+        {
+          setNum(number)
+        }
+    }
+    catch (error)
+    {
+      console.log(error)
+    }
+    
+    // try
+    // {
+    //   console.log(number)
+    //   number = Number(number)
+    //   console.log(typeof(number))
+    // } catch(e)
+    // {
+    //   console.log('Not Working')
+    // }
+  }
 
   useEffect(() => {
-    getData()
-  }, [])
+    getData(num)
+  }, [num])
 
 
 const loaded = () => {
-  
   return (
     <div>
         <Nav setDarkMode = {setDarkMode} darkMode = {darkMode} update = {update}/>
+        <div className="buttonContainer">
+          <input type='text' placeholder='Enter Number Of Pokemon' className='numPokemon'/>
+          <button onClick={changeNum}>Submit</button>
+        </div>
         {pokemon.results.map((pokemon, i) =>
         {
           const {name, url} = pokemon
+          
           return(
             <div className='collectionContainer'>
               <div className="card changeBorder">
-                  <p className="pokemonName change">{name}</p>
+                  <p className="pokemonName change" key={i}> {name}</p>
               </div>
             </div>
           )
