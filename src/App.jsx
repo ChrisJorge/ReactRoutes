@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 
 import Homepage from "./pages/Homepage";
 import Collection from "./pages/Collection";
+import Pokemon from "./pages/Pokemon";
 
 
 function App() {
@@ -82,6 +83,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Homepage setDarkMode = {setDarkMode} darkMode = {darkMode} update = {update}/>}/>
         <Route path="/collection" element={<Collection setDarkMode = {setDarkMode} darkMode = {darkMode} update = {update} />}/>
+        <Route path="/pokemon/:name" element={<Pokemon setDarkMode = {setDarkMode} darkMode = {darkMode} update = {update}/>}/>
       </Routes>
     </div>
   )

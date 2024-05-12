@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react'
 
 function Collection({setDarkMode, darkMode, update,}) {
   const [pokemon, setPokemon] = useState("null");
- const [num, setNum] = useState(1)
+ const [num, setNum] = useState(10)
 
   const getData = async(num) => {
     try
