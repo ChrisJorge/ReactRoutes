@@ -34,6 +34,13 @@ function App() {
             let options = document.querySelectorAll('.changeBorder')[i];
             options.setAttribute('style', "border-color: black")
           }
+        for(let i = 0; i < document.querySelectorAll('input').length; i++)
+          {
+            let input = document.querySelectorAll('input')[i]
+            input.classList.add("light");
+            input.classList.remove("dark");
+            
+          }
       }
     else{
       if(code == 0)
@@ -52,6 +59,13 @@ function App() {
           let options = document.querySelectorAll('.changeBorder')[i];
           options.setAttribute('style', "border-color: white")
         }
+      for(let i = 0; i < document.querySelectorAll('input').length; i++)
+          {
+            let input = document.querySelectorAll('input')[i]
+            input.classList.remove("light");
+            input.classList.add("dark");
+            
+          }
     }
   }
 

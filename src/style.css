@@ -30,7 +30,7 @@
     border-radius: 9%;
 }
 
-.homePageOption:hover, .card:hover{
+.homePageOption:hover, .card:hover, .collectionBTN:hover{
     background-color: gray;
 }
 
@@ -139,11 +139,52 @@ body{
 }
 
 /* Collection CSS */
+.buttonContainer{
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.numPokemon{
+  height: 45px;
+  margin-right: 10px;
+  background-color: #2195f300;
+  border: solid black 2px;
+}
+.light{
+  color: black;
+}
+.light::placeholder{
+  color: black;
+}
+
+.dark{
+  color: white;
+}
+.dark::placeholder{
+  color: white;
+}
+.collectionBTN{
+  border-radius: 15%;
+  background-color: rgba(255, 255, 255, 0);
+  border: solid black 2px;
+}
+
 .collectionContainer{
   margin-top: 25px;
   display: flex;
   width: 100%;
   justify-content: center;
+}
+
+.card{
+  border: solid black 5px;
+  width: 300px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 9%;
 }
 
 .pokemonName{

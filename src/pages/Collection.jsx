@@ -1,11 +1,11 @@
 import React from 'react'
 import Nav from '../components/Nav'
-import CollectionItem from '../components/CollectionItem'
+import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react'
 
 function Collection({setDarkMode, darkMode, update,}) {
   const [pokemon, setPokemon] = useState("null");
- const [num, setNum] = useState(10)
+ const [num, setNum] = useState(1)
 
   const getData = async(num) => {
     try
@@ -34,15 +34,7 @@ function Collection({setDarkMode, darkMode, update,}) {
       console.log(error)
     }
     
-    // try
-    // {
-    //   console.log(number)
-    //   number = Number(number)
-    //   console.log(typeof(number))
-    // } catch(e)
-    // {
-    //   console.log('Not Working')
-    // }
+
   }
 
   useEffect(() => {
@@ -55,8 +47,8 @@ const loaded = () => {
     <div>
         <Nav setDarkMode = {setDarkMode} darkMode = {darkMode} update = {update}/>
         <div className="buttonContainer">
-          <input type='text' placeholder='Enter Number Of Pokemon' className='numPokemon'/>
-          <button onClick={changeNum}>Submit</button>
+          <input type='text' placeholder='Enter Number Of Pokemon' className='numPokemon changeBorder'/>
+          <button onClick={changeNum} className='collectionBTN changeBorder'><p className='change'>Submit</p></button>
         </div>
         {pokemon.results.map((pokemon, i) =>
         {
@@ -64,9 +56,12 @@ const loaded = () => {
           
           return(
             <div className='collectionContainer'>
-              <div className="card changeBorder">
+              
+                <Link to={`/pokemon/${name}`}>
+                <div className="card changeBorder">
                   <p className="pokemonName change" key={i}> {name}</p>
-              </div>
+                </div>
+                </Link>
             </div>
           )
 
