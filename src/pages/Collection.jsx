@@ -1,45 +1,45 @@
-import React from 'react'
-import Nav from '../components/Nav'
+import React from 'react';
+import Nav from '../components/Nav';
 import { Link } from 'react-router-dom';
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react';
 
 function Collection({setDarkMode, darkMode, update,}) {
   const [pokemon, setPokemon] = useState("null");
- const [num, setNum] = useState(10)
+ const [num, setNum] = useState(10);
 
   const getData = async(num) => {
     try
     {
-      const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=${num}`)
-      const data = await response.json()
-      setPokemon(data)
+      const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=${num}`);
+      const data = await response.json();
+      setPokemon(data);
     } catch(error)
     {
-      console.error(error)
-    }
-}
+      console.error(error);
+    };
+};
 
   const changeNum = () => {
-    let number = document.querySelector('.numPokemon').value
+    let number = document.querySelector('.numPokemon').value;
     try
     {
-      number = parseInt(number)
+      number = parseInt(number);
       if(number > 0 && number <= 10000)
         {
-          setNum(number)
+          setNum(number);
         }
     }
     catch (error)
     {
-      console.log(error)
-    }
+      console.log(error);
+    };
     
 
-  }
+  };
 
   useEffect(() => {
-    getData(num)
-  }, [num])
+    getData(num);
+  }, [num]);
 
 
 const loaded = () => {
@@ -63,18 +63,18 @@ const loaded = () => {
                 </div>
                 </Link>
             </div>
-          )
+          );
 
-        })}
+        })};
     </div>
-  )
-}
+  );
+};
 
 const loading = () => {
-    return (<div><h1>Loading....</h1> </div>)
-}
+    return (<div><h1>Loading....</h1> </div>);
+};
 
 return pokemon !== 'null' ? loaded() : loading();
-}
+};
 
-export default Collection
+export default Collection;
