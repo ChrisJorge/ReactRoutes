@@ -39,9 +39,9 @@ function Homepage({setDarkMode, darkMode,  update}) {
                 
                     <p className="homePageOptionText change">Browse Collection</p>
                 </Link>
-                <Link to = "/collection" className='homePageOption changeBorder'>
+                <Link to = "/pokemon/bulbasaur" className='homePageOption changeBorder'>
                 
-                    <p className="homePageOptionText change">Browse By Make</p>
+                    <p className="homePageOptionText change">Select Individual Pokemon</p>
                 </Link>
             </div>
 
