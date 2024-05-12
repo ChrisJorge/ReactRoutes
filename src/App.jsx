@@ -1,6 +1,6 @@
 
 import "./style.css";
-import {Route, Routes, useLocation} from "react-router-dom";
+import {Route, Routes} from "react-router-dom";
 import { useState, useEffect } from "react";
 // Importing Pages
 
@@ -13,70 +13,69 @@ function App() {
   const [darkMode, setDarkMode] = useState(false);
 
   const update = (code) => {
-    let moon = document.querySelectorAll('svg')[1]
-    let sun = document.querySelectorAll('svg')[0]
-    let body = document.querySelector('body')
+    let moon = document.querySelectorAll('svg')[1];
+    let sun = document.querySelectorAll('svg')[0];
+    let body = document.querySelector('body');
 
     if(!darkMode)
       {
         if(code == 0)
         {
-          moon.setAttribute('style', 'display: block')
-          sun.setAttribute('style', 'display: none')
-        }
+          moon.setAttribute('style', 'display: block');
+          sun.setAttribute('style', 'display: none');
+        };
         body.setAttribute("style", "background-color:white");
         for(let i = 0; i < document.querySelectorAll('.change').length; i++)
           {
-            let text = document.querySelectorAll('.change')[i]
-            text.setAttribute("style", "color: black")
-          }
+            let text = document.querySelectorAll('.change')[i];
+            text.setAttribute("style", "color: black");
+          };
         for(let i = 0; i < document.querySelectorAll('.changeBorder').length; i++)
           {
             let options = document.querySelectorAll('.changeBorder')[i];
-            options.setAttribute('style', "border-color: black")
-          }
+            options.setAttribute('style', "border-color: black");
+          };
         for(let i = 0; i < document.querySelectorAll('input').length; i++)
           {
-            let input = document.querySelectorAll('input')[i]
+            let input = document.querySelectorAll('input')[i];
             input.classList.add("light");
             input.classList.remove("dark");
             
-          }
+          };
       }
     else{
       if(code == 0)
         {
-          moon.setAttribute('style', 'display: none')
-          sun.setAttribute('style', 'display: block')
-        }
+          moon.setAttribute('style', 'display: none');
+          sun.setAttribute('style', 'display: block');
+        };
       body.setAttribute("style", "background-color:black");
       for(let i = 0; i < document.querySelectorAll('.change').length; i++)
         {
-          let text = document.querySelectorAll('.change')[i]
-          text.setAttribute("style", "color: white")
-        }
+          let text = document.querySelectorAll('.change')[i];
+          text.setAttribute("style", "color: white");
+        };
       for(let i = 0; i < document.querySelectorAll('.changeBorder').length; i++)
         {
           let options = document.querySelectorAll('.changeBorder')[i];
-          options.setAttribute('style', "border-color: white")
-        }
+          options.setAttribute('style', "border-color: white");
+        };
       for(let i = 0; i < document.querySelectorAll('input').length; i++)
           {
-            let input = document.querySelectorAll('input')[i]
+            let input = document.querySelectorAll('input')[i];
             input.classList.remove("light");
             input.classList.add("dark");
             
-          }
-    }
-  }
+          };
+    };
+  };
 
   
 
   useEffect(() => {
 
-
-      update()
-  }, [darkMode])
+      update();
+  }, [darkMode]);
 
   return (
     <div className="App">
@@ -86,7 +85,7 @@ function App() {
         <Route path="/pokemon/:name" element={<Pokemon setDarkMode = {setDarkMode} darkMode = {darkMode} update = {update}/>}/>
       </Routes>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
