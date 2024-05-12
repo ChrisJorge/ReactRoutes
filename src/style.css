@@ -190,3 +190,19 @@ body{
 .pokemonName{
   font-size: 35px;
 }
+
+/* Individual Pokemon Styling */
+.masterContainer{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.Image{
+  border: solid black;
+  width: 95%;
+}
+
+.info{
+  font-size: 25px;
+}
