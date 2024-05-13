@@ -49,7 +49,7 @@ function Pokemon({setDarkMode, darkMode, update}) {
                 <div className="masterContainer">
                     <div className='pokemonContainer'>
                         <h1 className='change'>{pokemon.name}</h1>
-                        <img src={image} className='Image'/>
+                        <img src={image} className='Image changeBorder'/>
                         <div className="info">
                             <p className="infoText change">Type: {type}</p>
                             <p className="infoText change">HP: {health}</p>
