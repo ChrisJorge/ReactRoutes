@@ -3,14 +3,13 @@ import Nav from '../components/Nav';
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
-function Collection({setDarkMode, darkMode, update,}) {
+function Collection({setDarkMode, darkMode, update, setNum, num}) {
  const [pokemon, setPokemon] = useState("null");
- const [num, setNum] = useState(10);
 
 
  const sortData = async (data) => {
   let arr = []
-  for(let i = 0; i < data.results.length; i++)
+  for(let i = 0; i < data.results.length; i++) 
     {
       arr.push(data.results[i].name)
     }
@@ -65,7 +64,6 @@ const loaded = () => {
         </div>
         {pokemon.map((pokemon, i) =>
         {
-          // const {name, url} = pokemon
           
           return(
             <div className='collectionContainer'>

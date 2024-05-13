@@ -11,6 +11,8 @@ import Pokemon from "./pages/Pokemon";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
+  const [num, setNum] = useState(10);
+
 
   const update = (code) => {
     let moon = document.querySelectorAll('svg')[1];
@@ -81,7 +83,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<Homepage setDarkMode = {setDarkMode} darkMode = {darkMode} update = {update}/>}/>
-        <Route path="/collection" element={<Collection setDarkMode = {setDarkMode} darkMode = {darkMode} update = {update} />}/>
+        <Route path="/collection" element={<Collection setDarkMode = {setDarkMode} darkMode = {darkMode} update = {update} setNum = {setNum} num = {num}/>}/>
         <Route path="/pokemon/:name" element={<Pokemon setDarkMode = {setDarkMode} darkMode = {darkMode} update = {update}/>}/>
       </Routes>
     </div>
