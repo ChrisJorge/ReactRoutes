@@ -74,7 +74,7 @@ function App() {
 
   useEffect(() => {
 
-      update();
+      update(0);
   }, [darkMode]);
 
   return (
