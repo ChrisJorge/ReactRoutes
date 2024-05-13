@@ -6,7 +6,7 @@ import Nav from '../components/Nav';
 function Pokemon({setDarkMode, darkMode, update}) {
     const params = useParams();
     const name = params.name;
-    const url = `https://pokeapi.co/api/v2/pokemon/${name}`;
+    let url = `https://pokeapi.co/api/v2/pokemon/${name}`;
    
     const [pokemon, setPokemon] = useState('null');
     const [image, setImage] = useState('null');
@@ -17,6 +17,18 @@ function Pokemon({setDarkMode, darkMode, update}) {
     const [health, setHealth] = useState('null');
     const [ weight, setWeight] = useState('null');
    
+
+    const switchPokemon = () => {
+        try{
+            let newPokemon = document.querySelector('.newPokemon').value
+            url = `https://pokeapi.co/api/v2/pokemon/${newPokemon}`
+            individualPokemon()
+        }
+        catch(e)
+        {
+            console.log(e)
+        }
+    }
 
     const individualPokemon = async () => {
         try{
@@ -48,6 +60,10 @@ function Pokemon({setDarkMode, darkMode, update}) {
                 <Nav setDarkMode = {setDarkMode} darkMode = {darkMode} update = {update}/>
                 <div className="masterContainer">
                     <div className='pokemonContainer'>
+                        <div className="inputContainer">
+                            <input  typeof='text' placeholder='Enter A Pokemon' className='newPokemon changeBorder'/>
+                            <button className='pokemonBTN changeBorder' onClick={switchPokemon}><p className='change'>Submit</p></button>
+                        </div>
                         <h1 className='change'>{pokemon.name}</h1>
                         <img src={image} className='Image changeBorder'/>
                         <div className="info">
