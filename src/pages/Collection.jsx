@@ -4,15 +4,28 @@ import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
 function Collection({setDarkMode, darkMode, update,}) {
-  const [pokemon, setPokemon] = useState("null");
+ const [pokemon, setPokemon] = useState("null");
  const [num, setNum] = useState(10);
+
+
+ const sortData = async (data) => {
+  let arr = []
+  for(let i = 0; i < data.results.length; i++)
+    {
+      arr.push(data.results[i].name)
+    }
+    arr.sort();
+    console.log(arr)
+    return arr;
+ }
 
   const getData = async(num) => {
     try
     {
       const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=${num}`);
       const data = await response.json();
-      setPokemon(data);
+      let newData = await sortData(data);
+      setPokemon(newData)
     } catch(error)
     {
       console.error(error);
@@ -50,16 +63,16 @@ const loaded = () => {
           <input type='text' placeholder='Enter Number Of Pokemon' className='numPokemon changeBorder'/>
           <button onClick={changeNum} className='collectionBTN changeBorder'><p className='change'>Submit</p></button>
         </div>
-        {pokemon.results.map((pokemon, i) =>
+        {pokemon.map((pokemon, i) =>
         {
-          const {name, url} = pokemon
+          // const {name, url} = pokemon
           
           return(
             <div className='collectionContainer'>
               
-                <Link to={`/pokemon/${name}`}>
+                <Link to={`/pokemon/${pokemon}`}>
                 <div className="card changeBorder">
-                  <p className="pokemonName change" key={i}> {name}</p>
+                  <p className="pokemonName change" key={i}> {pokemon}</p>
                 </div>
                 </Link>
             </div>
