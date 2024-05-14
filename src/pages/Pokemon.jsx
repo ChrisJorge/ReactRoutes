@@ -8,14 +8,7 @@ function Pokemon({setDarkMode, darkMode, update}) {
     const name = params.name;
     let url = `https://pokeapi.co/api/v2/pokemon/${name}`;
    
-    const [pokemon, setPokemon] = useState('null');
-    const [image, setImage] = useState('null');
-    const [type, setType] = useState('null');
-    const [attack, setAttack] = useState('null');
-    const [defense, setDefense] = useState('null');
-    const [speed, setSpeed] = useState('null');
-    const [health, setHealth] = useState('null');
-    const [ weight, setWeight] = useState('null');
+    const [pokemon, setPokemon] = useState(null);
    
 
     const switchPokemon = () => {
@@ -35,13 +28,6 @@ function Pokemon({setDarkMode, darkMode, update}) {
             const response = await fetch(url);
             const data = await response.json();
             console.log(data);
-            setImage(data.sprites.front_default);
-            setType(data.types[0].type.name); 
-            setHealth(data.stats[0].base_stat);
-            setAttack(data.stats[1].base_stat);
-            setDefense(data.stats[2].base_stat);
-            setSpeed(data.stats[5].base_stat);
-            setWeight(data.weight);
             setPokemon(data);
         } catch (e)
         {
@@ -65,14 +51,14 @@ function Pokemon({setDarkMode, darkMode, update}) {
                             <button className='pokemonBTN changeBorder' onClick={switchPokemon}><p className='change'>Submit</p></button>
                         </div>
                         <h1 className='change'>{pokemon.name}</h1>
-                        <img src={image} className='Image changeBorder'/>
+                        <img src={pokemon.sprites.front_default} className='Image changeBorder'/>
                         <div className="info">
-                            <p className="infoText change">Type: {type}</p>
-                            <p className="infoText change">HP: {health}</p>
-                            <p className="infoText change">Attack: {attack}</p>
-                            <p className="infoText change">Defense: {defense}</p>
-                            <p className="infoText change">Speed: {speed}</p>
-                            <p className="infoText change">Weight: {weight}lbs</p>
+                            <p className="infoText change">Type: {pokemon.types[0].type.name}</p>
+                            <p className="infoText change">HP: {pokemon.stats[0].base_stat}</p>
+                            <p className="infoText change">Attack: {pokemon.stats[1].base_stat}</p>
+                            <p className="infoText change">Defense: {pokemon.stats[2].base_stat}</p>
+                            <p className="infoText change">Speed: {pokemon.stats[5].base_stat}</p>
+                            <p className="infoText change">Weight: {pokemon.weight}lbs</p>
                         </div> 
                     </div>
                 </div>
