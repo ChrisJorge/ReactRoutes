@@ -50,7 +50,7 @@ function Pokemon({setDarkMode, darkMode, update}) {
                             <input  typeof='text' placeholder='Enter A Pokemon' className='newPokemon changeBorder'/>
                             <button className='pokemonBTN changeBorder' onClick={switchPokemon}><p className='change'>Submit</p></button>
                         </div>
-                        <h1 className='change'>{pokemon.name}</h1>
+                        <h1 className='change'>{(pokemon.name).toUpperCase()}</h1>
                         <img src={pokemon.sprites.front_default} className='Image changeBorder'/>
                         <div className="info">
                             <p className="infoText change">Type: {pokemon.types[0].type.name}</p>
